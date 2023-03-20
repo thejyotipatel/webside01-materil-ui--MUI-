@@ -1,7 +1,9 @@
-import { Box } from "@mui/material";
+import { Box } from '@mui/material'
 
 export default function Feed() {
   return (
-    <Box bgcolor={'lightblue'} flex="4" p={2} >Feed</Box>
+    <Box bgcolor={'lightblue'} flex='4' p={2}>
+      Feed
+    </Box>
   )
 }

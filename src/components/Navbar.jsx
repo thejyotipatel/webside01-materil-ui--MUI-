@@ -1,17 +1,20 @@
 import {
+  Chat,
+  ChatBubble,
+  ChatBubbleOutline,
+  Mail,
+  Notifications,
+} from '@mui/icons-material'
+import {
   AppBar,
   Badge,
   Box,
   Button,
-  Icon,
   InputBase,
   Toolbar,
   Typography,
 } from '@mui/material'
 
-// import Badge from '@mui/material/Badge';
-import Mail from '@mui/icons-material/Mail'
-import Notifications from '@mui/icons-material/Notifications'
 export default function Navbar() {
   return (
     <AppBar position='sticky'>
@@ -42,7 +45,7 @@ export default function Navbar() {
         </Badge>
         <Badge
           badgeContent={4}
-          color=''
+          color='primary'
           sx={{
             xs: 'none',
             sm: 'block',
@@ -50,6 +53,17 @@ export default function Navbar() {
         >
           <Notifications color='white' />
         </Badge>
+        <Badge
+          badgeContent={4}
+          color='primary'
+          sx={{
+            xs: 'none',
+            sm: 'block',
+          }}
+        >
+          <Chat color='white' />
+        </Badge>
+
         <Button>user red</Button>
       </Toolbar>
     </AppBar>
