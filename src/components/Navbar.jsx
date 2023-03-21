@@ -1,12 +1,8 @@
-import {
-  Chat,
-  ChatBubble,
-  ChatBubbleOutline,
-  Mail,
-  Notifications,
-} from '@mui/icons-material'
+import styled from '@emotion/styled'
+import { Chat, Mail, Notifications } from '@mui/icons-material'
 import {
   AppBar,
+  Avatar,
   Badge,
   Box,
   Button,
@@ -14,6 +10,20 @@ import {
   Toolbar,
   Typography,
 } from '@mui/material'
+
+const NavIcons = styled(Box)({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  gap: '1em',
+})
+
+const UserAvater = styled(Button)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  gap: '0.5em',
+}))
 
 export default function Navbar() {
   return (
@@ -33,38 +43,47 @@ export default function Navbar() {
         <Box bgcolor={'white'} borderRadius={'0.2em'} px={1} width={'40%'}>
           <InputBase placeholder='search...' />
         </Box>
-        <Badge
-          badgeContent={4}
-          color='primary'
-          sx={{
-            xs: 'none',
-            sm: 'block',
-          }}
-        >
-          <Mail color='white' />
-        </Badge>
-        <Badge
-          badgeContent={4}
-          color='primary'
-          sx={{
-            xs: 'none',
-            sm: 'block',
-          }}
-        >
-          <Notifications color='white' />
-        </Badge>
-        <Badge
-          badgeContent={4}
-          color='primary'
-          sx={{
-            xs: 'none',
-            sm: 'block',
-          }}
-        >
-          <Chat color='white' />
-        </Badge>
-
-        <Button>user red</Button>
+        <NavIcons>
+          <Badge
+            badgeContent={4}
+            color='primary'
+            sx={{
+              xs: 'none',
+              sm: 'block',
+            }}
+          >
+            <Mail color='white' />
+          </Badge>
+          <Badge
+            badgeContent={4}
+            color='primary'
+            sx={{
+              xs: 'none',
+              sm: 'block',
+            }}
+          >
+            <Notifications color='white' />
+          </Badge>
+          <Badge
+            badgeContent={4}
+            color='primary'
+            sx={{
+              xs: 'none',
+              sm: 'block',
+            }}
+          >
+            <Chat color='white' />
+          </Badge>
+          <UserAvater
+            display={'flex'}
+            sx={{ display: { xs: 'flex', sm: 'none' } }}
+          >
+            <Avatar sx={{ width: '30px', height: '30px' }} />
+            <Typography variant='span' color='red' textTransform={'capitalize'}>
+              user.red
+            </Typography>
+          </UserAvater>
+        </NavIcons>
       </Toolbar>
     </AppBar>
   )
