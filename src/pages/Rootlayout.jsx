@@ -19,7 +19,7 @@ const Rootlayout = () => {
           color={'black'}
           // height='100%'
           // borderRight={'2px solid #ddd'}
-          bgcolor={'lightblue'}
+          bgcolor={'white'}
           // height={'100vh'}
           // position='relative'
           justifyContent='center'
@@ -32,12 +32,11 @@ const Rootlayout = () => {
           component={Paper}
           // elevation={4}
           flex='6'
-          p={2}
         >
           <Outlet />
         </Box>
         <Box
-          bgcolor={'lightcoral'}
+          bgcolor={'white'}
           flex='4'
           p={2}
           sx={{ display: { xs: 'none', sm: 'block' } }}

@@ -1,103 +1,230 @@
 import {
-  Avatar,
-  Card,
-  CardHeader,
-  IconButton,
-  CardMedia,
-  CardContent,
-  Typography,
-  CardActions,
-  Collapse,
-  Box,
-  Stack,
-} from '@mui/material'
-import image from '../assets/01.jpg'
-import {
-  MoreVert,
-  Favorite,
-  Share,
-  Loop,
-  FileUploadOutlined,
-  ChatBubble,
-  ChatBubbleOutline,
-  KeyboardArrowDown,
-  DoneTwoTone,
+  ChatBubbleOutlineOutlined,
   Circle,
+  Favorite,
+  FileUploadOutlined,
+  KeyboardArrowDown,
+  Loop,
 } from '@mui/icons-material'
-const Post = () => {
+import { Avatar, Box, IconButton, Stack, Typography } from '@mui/material'
+const Post = ({
+  userImage,
+  name,
+  userName,
+  timestamp,
+  text,
+  tags,
+  image,
+  chat,
+  retweet,
+  like,
+}) => {
   return (
-    <Card
+    <Box
       sx={{
         display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-end',
+        alignItems: 'start',
+        gap: '.5em',
+        width: '100%',
       }}
     >
-      <CardContent>
-        <Box
-          display={'flex'}
-          justifyContent='space-between'
-          alignItems={'center'}
-          marginBottom='0px'
-          width='100%'
-        >
-          <Stack direction='row' alignItems={'center'} spacing='0.2em'>
-            <Avatar aria-label='recipe'>R</Avatar>
-            <Typography variant='body2' fontWeight={600} color='text.peimary'>
-              Shrimp
-            </Typography>
-            <Typography variant='body2' fontWeight='500' color='text.secondary'>
-              @Shrimpchorizo
-            </Typography>
-            <Circle
-              sx={{ width: '5px', fontWeight: '500', color: '#a39494' }}
-            />
-            <Typography variant='body2' color='text.secondary'>
-              3m
-            </Typography>
-          </Stack>
-          <IconButton aria-label='settings'>
-            <KeyboardArrowDown />
-          </IconButton>
-        </Box>
-        <Typography variant='body2' textAlign={'start'} color='text.secondary'>
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the
-          mussels, if you like.
-        </Typography>
-      </CardContent>
+      <Avatar aria-label='recipe'>{userImage}</Avatar>
       <Box
-        component='img'
-        height='35%'
-        width={'90%'}
-        padding={'0 1em 0 0'}
-        src={image}
-        alt='Paella dish'
-        borderRadius={'10px'}
-      />
-      <CardActions
         sx={{
           display: 'flex',
-          // flexDirection: 'column',
-          alignItems: 'start',
-          width: '50%',
-          justifyContent: 'space-between',
+          flexDirection: 'column',
         }}
       >
-        <IconButton aria-label='chat'>
-          <ChatBubbleOutline />
-        </IconButton>
-        <IconButton aria-label='retweet'>
-          <Loop />
-        </IconButton>
-        <IconButton aria-label='add to favorites'>
-          <Favorite />
-        </IconButton>
-        <IconButton aria-label='upload'>
-          <FileUploadOutlined />
-        </IconButton>
-      </CardActions>
-    </Card>
+        <Box>
+          <Box
+            display={'flex'}
+            justifyContent='space-between'
+            alignItems={'center'}
+            width='100%'
+          >
+            <Stack
+              direction='row'
+              alignItems={'center'}
+              spacing='0.2em'
+              fontWeight={600}
+            >
+              <Typography variant='body2' fontWeight={600} color='text.peimary'>
+                {name}
+              </Typography>
+              <Typography
+                variant='body2'
+                fontWeight='600'
+                color='text.secondary'
+              >
+                @{userName}
+              </Typography>
+              <Circle
+                sx={{ width: '5px', fontWeight: '600', color: '#a39494' }}
+              />
+              <Typography
+                fontWeight='500'
+                variant='body2'
+                color='text.secondary'
+              >
+                {timestamp}
+              </Typography>
+            </Stack>
+            <IconButton aria-label='settings'>
+              <KeyboardArrowDown
+                sx={{
+                  position: 'absolute',
+                  width: '20px',
+                  height: '20px',
+                  '&:hover, &:focus': {
+                    color: '#1976d2',
+                    '& svg': {
+                      color: '#1976d2',
+                    },
+                  },
+                }}
+              />
+            </IconButton>
+          </Box>
+          <Typography
+            variant='body2'
+            paddingBottom={1}
+            textAlign={'start'}
+            fontWeight={500}
+            color='text.secondary'
+          >
+            {text}
+            {tags}
+          </Typography>
+        </Box>
+        {image && (
+          <Box
+            component='img'
+            height='250px'
+            width={'100%'}
+            // m={'0 1em 0 0'}
+            src={image}
+            alt='Paella dish'
+            marginBottom={1}
+            borderRadius={'10px'}
+          />
+        )}
+        <Box
+          sx={{
+            display: 'flex',
+            // flexDirection: 'column',
+            alignItems: 'start',
+            // width: '50%',
+            justifyContent: 'start',
+            gap: '1em',
+          }}
+        >
+          <IconButton
+            aria-label='chat'
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.2em',
+            }}
+          >
+            <ChatBubbleOutlineOutlined
+              sx={{
+                width: '18px',
+                height: '18px',
+                '&:hover, &:focus': {
+                  color: '#1976d2',
+                  '& svg': {
+                    color: '#1976d2',
+                  },
+                },
+              }}
+            />
+            <Typography
+              variant='body2'
+              // paddingBottom={1}
+              // textAlign={'start'}
+              color='text.secondary'
+              // fontWeight={500}
+              fontSize={'15px'}
+            >
+              {chat}
+            </Typography>
+          </IconButton>
+          <IconButton
+            aria-label='retweet'
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.2em',
+            }}
+          >
+            <Loop
+              sx={{
+                width: '18px',
+                height: '18px',
+                '&:hover, &:focus': {
+                  color: '#1976d2',
+                  '& svg': {
+                    color: '#1976d2',
+                  },
+                },
+              }}
+            />
+            <Typography
+              variant='body2'
+              // paddingBottom={1}
+              // textAlign={'start'}
+              color='text.secondary'
+              // fontWeight={500}
+              fontSize={'15px'}
+            >
+              {retweet}
+            </Typography>
+          </IconButton>
+          <IconButton
+            aria-label='add to favorites'
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.2em',
+            }}
+          >
+            <Favorite
+              sx={{
+                width: '18px',
+                height: '18px',
+                '&:hover, &:focus': {
+                  color: '#1976d2',
+                  '& svg': {
+                    color: '#1976d2',
+                  },
+                },
+              }}
+            />
+            <Typography
+              variant='body2'
+              color='text.secondary'
+              fontSize={'15px'}
+            >
+              {like}
+            </Typography>
+          </IconButton>
+          <IconButton aria-label='upload'>
+            <FileUploadOutlined
+              sx={{
+                width: '18px',
+                height: '18px',
+                '&:hover, &:focus': {
+                  color: '#1976d2',
+                  '& svg': {
+                    color: '#1976d2',
+                  },
+                },
+              }}
+            />
+          </IconButton>
+        </Box>
+      </Box>
+    </Box>
   )
 }
 export default Post
