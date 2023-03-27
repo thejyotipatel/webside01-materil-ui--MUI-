@@ -9,7 +9,9 @@ import {
   Avatar,
   Box,
   Button,
+  createTheme,
   IconButton,
+  Input,
   Stack,
   TextField,
   Typography,
@@ -71,6 +73,13 @@ const postData = [
     retweet: 4,
   },
 ]
+const theme = createTheme({
+  components:{
+    TextField{
+      stylle
+    }
+  }
+})
 export default function Feed() {
   return (
     <>
@@ -113,15 +122,17 @@ export default function Feed() {
         <Avatar aria-label='recipe' src={img2}>
           G
         </Avatar>
-        <Box width={'100%'}>
-          <TextField
+        <Box width={'100%'} sx={{ border: 0 }}>
+          <SearchInput
             margin='none'
             fullWidth
             name='search'
+            // variant='standard'
             placeholder="What's happening?"
             type='search'
             id='search'
             padding='none'
+            sx={{ border: '0' }}
           />
           <Stack direction={'row'} justifyContent='space-between'>
             <Box>
