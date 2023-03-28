@@ -86,37 +86,37 @@ const Sidebars = () => {
         </ListLink>
         <ListLink>
           <ListItemIcon>
-            <Home sx={{ fontSize: '2em' }} />
+            <Home sx={{ fontSize: '2em', color: 'black' }} />
           </ListItemIcon>
           <ListItemText>Home</ListItemText>
         </ListLink>
         <ListLink>
           <ListItemIcon>
-            <Tag sx={{ fontSize: '2em' }} />
+            <Tag sx={{ fontSize: '2em', color: 'black' }} />
           </ListItemIcon>
           <ListItemText>Explore</ListItemText>
         </ListLink>
         <ListLink>
           <ListItemIcon>
-            <Notifications sx={{ fontSize: '2em' }} />
+            <Notifications sx={{ fontSize: '2em', color: 'black' }} />
           </ListItemIcon>
           <ListItemText>Notifications</ListItemText>
         </ListLink>
         <ListLink>
           <ListItemIcon>
-            <EmailOutlined sx={{ fontSize: '2em' }} />
+            <EmailOutlined sx={{ fontSize: '2em', color: 'black' }} />
           </ListItemIcon>
           <ListItemText>Message</ListItemText>
         </ListLink>
         <ListLink>
           <ListItemIcon>
-            <BookmarkBorderOutlined sx={{ fontSize: '2em' }} />
+            <BookmarkBorderOutlined sx={{ fontSize: '2em', color: 'black' }} />
           </ListItemIcon>
           <ListItemText>Bookmarks</ListItemText>
         </ListLink>
         <ListLink>
           <ListItemIcon>
-            <ListAltRounded sx={{ fontSize: '2em' }} />
+            <ListAltRounded sx={{ fontSize: '2em', color: 'black' }} />
           </ListItemIcon>
           <ListItemText>Lists</ListItemText>
         </ListLink>
@@ -128,7 +128,7 @@ const Sidebars = () => {
         </ListLink>
         <ListLink>
           <ListItemIcon>
-            <MoreHorizRounded sx={{ fontSize: '2em' }} />
+            <MoreHorizRounded sx={{ fontSize: '2em', color: 'black' }} />
           </ListItemIcon>
           <ListItemText>More</ListItemText>
         </ListLink>

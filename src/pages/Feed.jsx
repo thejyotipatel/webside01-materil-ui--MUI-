@@ -74,11 +74,11 @@ const postData = [
   },
 ]
 const theme = createTheme({
-  components:{
-    TextField{
-      stylle
-    }
-  }
+  components: {
+    TextField: {
+      stylle: {},
+    },
+  },
 })
 export default function Feed() {
   return (
@@ -89,7 +89,7 @@ export default function Feed() {
         alignItems={'center'}
         width='100%'
         p={1}
-        border='1px solid rgba(0, 0, 0, 0.12)'
+        border='1px solid #e6ecf0'
       >
         <Typography
           component='h1'
@@ -116,14 +116,14 @@ export default function Feed() {
         alignItems={'center'}
         gap='0.5em'
         p={1}
-        border='1px solid rgba(0, 0, 0, 0.12)'
-        borderBottom='10px solid rgba(0, 0, 0, 0.12)'
+        border='1px solid #e6ecf0'
+        borderBottom='10px solid #e6ecf0'
       >
         <Avatar aria-label='recipe' src={img2}>
           G
         </Avatar>
         <Box width={'100%'} sx={{ border: 0 }}>
-          <SearchInput
+          {/* <SearchInput
             margin='none'
             fullWidth
             name='search'
@@ -133,7 +133,7 @@ export default function Feed() {
             id='search'
             padding='none'
             sx={{ border: '0' }}
-          />
+          /> */}
           <Stack direction={'row'} justifyContent='space-between'>
             <Box>
               <Box
@@ -204,7 +204,7 @@ export default function Feed() {
       </Box>
       {postData.map((post) => {
         return (
-          <Box key={post.id} p={1} border='1px solid rgba(0, 0, 0, 0.12)'>
+          <Box key={post.id} p={1} border='1px solid #e6ecf0'>
             <Post {...post} />
           </Box>
         )

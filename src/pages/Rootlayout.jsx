@@ -5,7 +5,11 @@ import Sidebars from '../components/Sidebars'
 
 const Rootlayout = () => {
   return (
-    <Grid component='main' bgcolor={'#e6ecf0'} sx={{ height: '100vh' }}>
+    <Grid
+      component='main'
+      bgcolor={'#e6ecf0'}
+      sx={{ height: '100vh', width: '90%' }}
+    >
       <Stack
         direction={'row'}
         // spacing={2}

@@ -42,18 +42,13 @@ const Post = ({
             alignItems={'center'}
             width='100%'
           >
-            <Stack
-              direction='row'
-              alignItems={'center'}
-              spacing='0.2em'
-              fontWeight={600}
-            >
-              <Typography variant='body2' fontWeight={600} color='text.peimary'>
+            <Stack direction='row' alignItems={'center'} spacing='0.2em'>
+              <Typography variant='body2' fontWeight={800} color='text.peimary'>
                 {name}
               </Typography>
               <Typography
                 variant='body2'
-                fontWeight='600'
+                fontWeight='700'
                 color='text.secondary'
               >
                 @{userName}
@@ -62,7 +57,7 @@ const Post = ({
                 sx={{ width: '5px', fontWeight: '600', color: '#a39494' }}
               />
               <Typography
-                fontWeight='500'
+                fontWeight='700'
                 variant='body2'
                 color='text.secondary'
               >
@@ -85,16 +80,43 @@ const Post = ({
               />
             </IconButton>
           </Box>
-          <Typography
-            variant='body2'
-            paddingBottom={1}
-            textAlign={'start'}
-            fontWeight={500}
-            color='text.secondary'
+          <Box
+            display={'flex'}
+            justifyContent='space-between'
+            flexDirection={'row'}
+            alignItems={'center'}
+            // width='100%'
           >
-            {text}
-            {tags}
-          </Typography>
+            <Typography
+              variant='body2'
+              paddingBottom={1}
+              textAlign={'start'}
+              fontWeight={600}
+              color='text'
+              component={'p'}
+
+              // display={'grid'}
+            >
+              {text}
+              {tags.map((item, i) => {
+                return (
+                  <Typography
+                    fontWeight={600}
+                    paddingLeft={'0.5em'}
+                    component={'a'}
+                    href='#'
+                    variant='body2'
+                    paddingBottom={1}
+                    textAlign={'start'}
+                    color='#1976d2'
+                    key={i}
+                  >
+                    #{item}
+                  </Typography>
+                )
+              })}
+            </Typography>
+          </Box>
         </Box>
         {image && (
           <Box
