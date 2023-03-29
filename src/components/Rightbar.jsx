@@ -1,4 +1,8 @@
-import { Search, SettingsOutlined } from '@mui/icons-material'
+import {
+  Search,
+  SettingsOutlined,
+  TimeToLeaveRounded,
+} from '@mui/icons-material'
 import {
   Box,
   FilledInput,
@@ -46,12 +50,6 @@ export default function Rightbar() {
   return (
     <Box position={'sticky'} top='0' width='inherit'>
       <Box backgrouncolor='#f5f8fa' width='100%'>
-        {/* <FormControl
-          sx={{
-            width: '100%',
-            borderRadius: '50%',
-          }}
-          > */}
         <TextField
           sx={{
             width: '100%',
@@ -70,21 +68,20 @@ export default function Rightbar() {
             ),
           }}
         />
-        {/* </FormControl> */}
 
-        <Box borderBottom='2px solid #e6ecf0'>
+        <Box bgcolor='#f5f8fa' p={1} my={2}>
           <Box
             borderBottom='2px solid #e6ecf0'
             display={'flex'}
             justifyContent='space-between'
             alignItems={'center'}
             // width='100%'
-            padding='0 1em 1em 1em'
+            paddingY={1}
           >
             <Typography
               component='h1'
               variant='body2'
-              padding={1}
+              // padding={1}
               fontSize={'22px'}
               textAlign={'start'}
               fontWeight={600}
@@ -99,75 +96,125 @@ export default function Rightbar() {
                 }}
               />
             </IconButton>
-            <Box>
-              <Typography
-                component='p'
-                variant='body2'
-                // fontSize={'22px'}
-                textAlign={'start'}
-                fontWeight={600}
-                color='text.secondary'
+          </Box>
+          {TrendForYouData.map((item) => {
+            const {
+              id,
+              title,
+              airticlAbout,
+              airticlDesc,
+              airticlImage,
+              totleAboutTweet,
+              tweets,
+            } = item
+            return (
+              <Box
+                key={id}
+                marginY={1}
+                bgcolor='transparent'
+                borderBottom='2px solid #e6ecf0'
+                display={'flex'}
+                flexDirection='column'
+                gap={'0.2em'}
+                alignItems={'flex-start'}
+                pb={2}
               >
-                Trending worldwide
-              </Typography>
-              <Link
-                href='#'
-                // component='h1'
-                // variant='body2'
-                textDecoration='none'
-                sx={{
-                  textDecoration: 'none',
-                  color: 'black',
-                  fontSize: '18px',
-                }}
-                textAlign={'start'}
-                fontWeight={800}
-              >
-                #Trendsforyou
-              </Link>
-              <Box>
                 <Typography
                   component='p'
                   variant='body2'
-                  // fontSize={'22px'}
-                  textAlign={'start'}
-                  fontWeight={600}
-                >
-                  <Typography
-                    component='span'
-                    variant='body2'
-                    // fontSize={'22px'}
-                    textAlign={'start'}
-                    fontWeight={600}
-                    color='text.secondary'
-                  >
-                    Space
-                  </Typography>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit
-                </Typography>
-                <Box
-                  component='img'
-                  // height='250px'
-                  width={'100%'}
-                  // m={'0 1em 0 0'}
-                  src={img2}
-                  alt='Paella dish'
-                  marginBottom={1}
-                  borderRadius={'10px'}
-                />
-                <Typography
-                  component='p'
-                  variant='body2'
-                  // fontSize={'22px'}
+                  fontSize={'14px'}
                   textAlign={'start'}
                   fontWeight={600}
                   color='text.secondary'
                 >
-                  7634588 pople are Tweeting about this
+                  Trending worldwide
                 </Typography>
+                <Link
+                  href='#'
+                  sx={{
+                    textDecoration: 'none',
+                    color: 'black',
+                    fontSize: '18px',
+                  }}
+                  textAlign={'start'}
+                  fontWeight={800}
+                >
+                  #{title}
+                </Link>
+                {airticlAbout && airticlDesc && totleAboutTweet && (
+                  <Box
+                    border='2px solid #e6ecf0'
+                    display={'flex'}
+                    borderRadius={'10px'}
+                    justifyContent='stretch'
+                    flexDirection='row'
+                    height={'100px'}
+                    overflow='hidden'
+                    marginY={1}
+                  >
+                    <Typography
+                      component='p'
+                      variant='body2'
+                      padding={1}
+                      fontSize={'16px'}
+                      fontWeight={600}
+                      display={'flex'}
+                      flexDirection='column'
+                      justifyContent='space-evenly'
+                      textAlign={'justify'}
+                    >
+                      <Typography
+                        component='span'
+                        variant='body2'
+                        textAlign={'start'}
+                        fontWeight={600}
+                        color='text.secondary'
+                        fontSize={'18px'}
+                      >
+                        {airticlAbout}
+                      </Typography>
+                      {airticlDesc}
+                    </Typography>
+                    <Box
+                      component='img'
+                      sx={{
+                        overflow: 'hidden',
+                      }}
+                      width={'100%'}
+                      maxWidth='100px'
+                      src={airticlImage}
+                      alt='Paella dish'
+                    />
+                  </Box>
+                )}
+                {tweets && (
+                  <Typography
+                    component='p'
+                    variant='body2'
+                    fontSize={'16px'}
+                    textAlign={'start'}
+                    fontWeight={600}
+                    color='text.secondary'
+                  >
+                    {tweets}K Tweets
+                  </Typography>
+                )}
+
+                {totleAboutTweet && (
+                  <Typography
+                    component='p'
+                    variant='body2'
+                    fontSize={'14px'}
+                    textAlign={'start'}
+                    fontWeight={600}
+                    color='text.secondary'
+                  >
+                    {totleAboutTweet} pople are Tweeting about this
+                  </Typography>
+                )}
               </Box>
-            </Box>
-          </Box>
+            )
+          })}
         </Box>
       </Box>
     </Box>
