@@ -1,5 +1,15 @@
-import { Settings } from '@mui/icons-material'
-import { Box, Typography, IconButton } from '@mui/material'
+import { Search, SettingsOutlined } from '@mui/icons-material'
+import {
+  Box,
+  FilledInput,
+  FormControl,
+  IconButton,
+  Input,
+  InputAdornment,
+  Link,
+  TextField,
+  Typography,
+} from '@mui/material'
 import img2 from '../assets/02.jpg'
 
 const TrendForYouData = [
@@ -34,34 +44,130 @@ const TrendForYouData = [
 ]
 export default function Rightbar() {
   return (
-    <Box position={'fixed'}>
+    <Box position={'sticky'} top='0' width='inherit'>
       <Box backgrouncolor='#f5f8fa' width='100%'>
-        <Box
-          borderBottom='10px solid #e6ecf0'
-          display={'flex'}
-          justifyContent='space-between'
-          alignItems={'center'}
+        {/* <FormControl
+          sx={{
+            width: '100%',
+            borderRadius: '50%',
+          }}
+          > */}
+        <TextField
+          sx={{
+            width: '100%',
+            border: 'none',
+          }}
+          id='search'
+          type='text'
+          placeholder='Search Twitter'
+          fullWidth
           width='100%'
-          p={1}
-        >
-          <Typography
-            component='h1'
-            variant='body2'
-            padding={1}
-            fontSize={'22px'}
-            textAlign={'start'}
-            fontWeight={600}
-            color='text.primary'
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position='start'>
+                <Search />
+              </InputAdornment>
+            ),
+          }}
+        />
+        {/* </FormControl> */}
+
+        <Box borderBottom='2px solid #e6ecf0'>
+          <Box
+            borderBottom='2px solid #e6ecf0'
+            display={'flex'}
+            justifyContent='space-between'
+            alignItems={'center'}
+            // width='100%'
+            padding='0 1em 1em 1em'
           >
-            Trends for you
-          </Typography>
-          <IconButton aria-label='refress'>
-            <Settings
-              sx={{
-                color: '#1976d2',
-              }}
-            />
-          </IconButton>
+            <Typography
+              component='h1'
+              variant='body2'
+              padding={1}
+              fontSize={'22px'}
+              textAlign={'start'}
+              fontWeight={600}
+              color='text.primary'
+            >
+              Trends for you
+            </Typography>
+            <IconButton aria-label='refress'>
+              <SettingsOutlined
+                sx={{
+                  color: '#1976d2',
+                }}
+              />
+            </IconButton>
+            <Box>
+              <Typography
+                component='p'
+                variant='body2'
+                // fontSize={'22px'}
+                textAlign={'start'}
+                fontWeight={600}
+                color='text.secondary'
+              >
+                Trending worldwide
+              </Typography>
+              <Link
+                href='#'
+                // component='h1'
+                // variant='body2'
+                textDecoration='none'
+                sx={{
+                  textDecoration: 'none',
+                  color: 'black',
+                  fontSize: '18px',
+                }}
+                textAlign={'start'}
+                fontWeight={800}
+              >
+                #Trendsforyou
+              </Link>
+              <Box>
+                <Typography
+                  component='p'
+                  variant='body2'
+                  // fontSize={'22px'}
+                  textAlign={'start'}
+                  fontWeight={600}
+                >
+                  <Typography
+                    component='span'
+                    variant='body2'
+                    // fontSize={'22px'}
+                    textAlign={'start'}
+                    fontWeight={600}
+                    color='text.secondary'
+                  >
+                    Space
+                  </Typography>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit
+                </Typography>
+                <Box
+                  component='img'
+                  // height='250px'
+                  width={'100%'}
+                  // m={'0 1em 0 0'}
+                  src={img2}
+                  alt='Paella dish'
+                  marginBottom={1}
+                  borderRadius={'10px'}
+                />
+                <Typography
+                  component='p'
+                  variant='body2'
+                  // fontSize={'22px'}
+                  textAlign={'start'}
+                  fontWeight={600}
+                  color='text.secondary'
+                >
+                  7634588 pople are Tweeting about this
+                </Typography>
+              </Box>
+            </Box>
+          </Box>
         </Box>
       </Box>
     </Box>

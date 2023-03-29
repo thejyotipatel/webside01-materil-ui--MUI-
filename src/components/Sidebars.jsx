@@ -72,10 +72,10 @@ const TweetButton = styled(ListItemButton)({
 })
 const Sidebars = () => {
   return (
-    <Box position={'fixed'}>
+    <Box position={'sticky'} top='0' width='inherit'>
       <List
         sx={{
-          padding: '1em',
+          padding: ' 0 1em 1em 1em',
           // position: 'fixed',
         }}
       >

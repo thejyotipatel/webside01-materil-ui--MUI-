@@ -1,9 +1,9 @@
 import {
+  AlignHorizontalLeft,
+  AutoAwesomeOutlined,
   EmojiEmotionsOutlined,
   GifBoxOutlined,
-  GraphicEqOutlined,
-  PhotoAlbumRounded,
-  StarBorderPurple500,
+  PhotoCameraBackOutlined,
 } from '@mui/icons-material'
 import {
   Avatar,
@@ -13,7 +13,7 @@ import {
   IconButton,
   Input,
   Stack,
-  TextField,
+  styled,
   Typography,
 } from '@mui/material'
 import img1 from '../assets/01.jpg'
@@ -73,142 +73,160 @@ const postData = [
     retweet: 4,
   },
 ]
-const theme = createTheme({
-  components: {
-    TextField: {
-      stylle: {},
-    },
+
+const TweetInput = styled(Input)({
+  border: 'none',
+  // color: 'white',
+  width: '100%',
+  marginBottom: '0.5em',
+  borderColor: 'transparent',
+  ':before': {
+    borderBottom: 'none',
+    borderColor: 'transparent',
   },
 })
 export default function Feed() {
   return (
     <>
       <Box
-        display={'flex'}
-        justifyContent='space-between'
-        alignItems={'center'}
-        width='100%'
-        p={1}
-        border='1px solid #e6ecf0'
+        position={'sticky'}
+        // border={'2px solid red'}
+        top='0'
+        bgcolor={'white'}
+        // width='inherit'
+        zIndex='2'
       >
-        <Typography
-          component='h1'
-          variant='body2'
-          padding={1}
-          fontSize={'22px'}
-          textAlign={'start'}
-          fontWeight={600}
-          color='text.primary'
+        <Box
+          display={'flex'}
+          justifyContent='space-between'
+          alignItems={'center'}
+          // width='100%'
+          p={1}
+          border='1px solid #e6ecf0'
         >
-          Home
-        </Typography>
-        <IconButton aria-label='refress' sx={{ marginRight: '0.5em' }}>
-          <StarBorderPurple500
-            sx={{
-              color: '#1976d2',
-            }}
-          />
-        </IconButton>
-      </Box>
-      <Box
-        display={'flex'}
-        justifyContent='flex-start'
-        alignItems={'center'}
-        gap='0.5em'
-        p={1}
-        border='1px solid #e6ecf0'
-        borderBottom='10px solid #e6ecf0'
-      >
-        <Avatar aria-label='recipe' src={img2}>
-          G
-        </Avatar>
-        <Box width={'100%'} sx={{ border: 0 }}>
-          {/* <SearchInput
+          <Typography
+            component='h1'
+            variant='body2'
+            padding={1}
+            fontSize={'22px'}
+            textAlign={'start'}
+            fontWeight={600}
+            color='text.primary'
+          >
+            Home
+          </Typography>
+          <IconButton aria-label='refress' sx={{ marginRight: '0.5em' }}>
+            <AutoAwesomeOutlined
+              sx={{
+                color: '#1976d2',
+              }}
+            />
+          </IconButton>
+        </Box>
+        <Box
+          display={'flex'}
+          justifyContent='flex-start'
+          alignItems={'start'}
+          gap='0.5em'
+          p={1}
+          border='1px solid #e6ecf0'
+        >
+          <Avatar aria-label='recipe' src={img2}>
+            G
+          </Avatar>
+          <Box width={'100%'} sx={{ border: 0 }}>
+            <TweetInput
+              placeholder="What's happening?"
+              type='search'
+              id='search'
+            />
+            {/* <SearchInput
             margin='none'
             fullWidth
             name='search'
             // variant='standard'
-            placeholder="What's happening?"
-            type='search'
-            id='search'
             padding='none'
             sx={{ border: '0' }}
           /> */}
-          <Stack direction={'row'} justifyContent='space-between'>
-            <Box>
-              <Box
+            <Stack direction={'row'} justifyContent='space-between'>
+              <Box>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'start',
+                    justifyContent: 'start',
+                    p: 0,
+                  }}
+                >
+                  <IconButton aria-label='chat' p='0'>
+                    <PhotoCameraBackOutlined
+                      sx={{
+                        width: '20px',
+                        height: '20px',
+                        color: '#1976d2',
+                      }}
+                    />
+                  </IconButton>
+                  <IconButton aria-label='retweet'>
+                    <GifBoxOutlined
+                      sx={{
+                        width: '20px',
+                        height: '20px',
+                        color: '#1976d2',
+                      }}
+                    />
+                  </IconButton>
+                  <IconButton aria-label='add to favorites'>
+                    <AlignHorizontalLeft
+                      sx={{
+                        width: '20px',
+                        height: '20px',
+                        color: '#1976d2',
+                      }}
+                    />
+                  </IconButton>
+                  <IconButton aria-label='upload'>
+                    <EmojiEmotionsOutlined
+                      sx={{
+                        width: '20px',
+                        height: '20px',
+                        color: '#1976d2',
+                      }}
+                    />
+                  </IconButton>
+                </Box>
+              </Box>
+              <Button
                 sx={{
-                  display: 'flex',
-                  alignItems: 'start',
-                  justifyContent: 'start',
+                  borderRadius: '2em',
+                  color: 'white',
+                  textAlign: 'center',
+                  backgroundColor: '#07b4ff',
+                  textTransform: 'capitalize',
+                  p: '0.3em 1em',
+                  fontWeight: '600',
+                  '&:hover, &:focus': {
+                    backgroundColor: 'rgba(7, 181, 255, 0.863)',
+                    // color: 'black',
+                    // opacity: '0.8',
+                  },
                 }}
               >
-                <IconButton aria-label='chat'>
-                  <PhotoAlbumRounded
-                    sx={{
-                      width: '20px',
-                      height: '20px',
-                      color: '#1976d2',
-                    }}
-                  />
-                </IconButton>
-                <IconButton aria-label='retweet'>
-                  <GifBoxOutlined
-                    sx={{
-                      width: '20px',
-                      height: '20px',
-                      color: '#1976d2',
-                    }}
-                  />
-                </IconButton>
-                <IconButton aria-label='add to favorites'>
-                  <GraphicEqOutlined
-                    sx={{
-                      width: '20px',
-                      height: '20px',
-                      color: '#1976d2',
-                    }}
-                  />
-                </IconButton>
-                <IconButton aria-label='upload'>
-                  <EmojiEmotionsOutlined
-                    sx={{
-                      width: '20px',
-                      height: '20px',
-                      color: '#1976d2',
-                    }}
-                  />
-                </IconButton>
-              </Box>
-            </Box>
-            <Button
-              sx={{
-                borderRadius: '2em',
-                color: 'white',
-                textAlign: 'center',
-                backgroundColor: '#07b4ff',
-                textTransform: 'capitalize',
-                p: '0.3em 1em',
-                fontWeight: '600',
-                '&:hover, &:focus': {
-                  backgroundColor: 'rgba(7, 181, 255, 0.863)',
-                  // color: 'black',
-                  // opacity: '0.8',
-                },
-              }}
-            >
-              tweet
-            </Button>
-          </Stack>
+                tweet
+              </Button>
+            </Stack>
+          </Box>
         </Box>
       </Box>
-      {postData.map((post) => {
-        return (
-          <Box key={post.id} p={1} border='1px solid #e6ecf0'>
-            <Post {...post} />
-          </Box>
-        )
-      })}
+      <Box borderTop='10px solid #e6ecf0'>
+        {postData.map((post) => {
+          return (
+            <Box key={post.id} p={1} border='1px solid #e6ecf0'>
+              <Post {...post} />
+            </Box>
+          )
+        })}
+      </Box>
     </>
   )
 }

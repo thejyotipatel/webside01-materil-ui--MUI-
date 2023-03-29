@@ -106,6 +106,9 @@ const Post = ({
                     component={'a'}
                     href='#'
                     variant='body2'
+                    sx={{
+                      textDecoration: 'none',
+                    }}
                     paddingBottom={1}
                     textAlign={'start'}
                     color='#1976d2'

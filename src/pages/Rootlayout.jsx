@@ -8,7 +8,8 @@ const Rootlayout = () => {
     <Grid
       component='main'
       bgcolor={'#e6ecf0'}
-      sx={{ height: '100vh', width: '90%' }}
+      sx={{ height: '100vh', width: '95%' }}
+      marginInline='auto'
     >
       <Stack
         direction={'row'}
@@ -18,7 +19,7 @@ const Rootlayout = () => {
       >
         <Box
           flex={3}
-          sx={{ display: { xs: 'none', sm: 'block' } }}
+          sx={{ display: { sm: 'none', md: 'block' } }}
           aria-label='main mailbox folders'
           color={'black'}
           // height='100%'
@@ -27,7 +28,7 @@ const Rootlayout = () => {
           // height={'100vh'}
           // position='relative'
           justifyContent='center'
-          p='1em'
+          p='1'
         >
           <Sidebars />
         </Box>
@@ -35,6 +36,7 @@ const Rootlayout = () => {
           variant='outlined'
           component={Paper}
           // elevation={4}
+          sx={{ display: { sm: 'none', md: 'block' } }}
           flex='6'
         >
           <Outlet />
@@ -43,7 +45,7 @@ const Rootlayout = () => {
           bgcolor={'white'}
           flex='4'
           p={2}
-          sx={{ display: { xs: 'none', sm: 'block' } }}
+          // sx={{ display: { sm: 'none', md: 'block' } }}
         >
           <Rightbar />
         </Box>
