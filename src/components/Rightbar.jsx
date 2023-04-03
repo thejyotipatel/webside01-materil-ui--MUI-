@@ -13,6 +13,7 @@ import {
   Link,
   TextField,
   Typography,
+  styled,
 } from '@mui/material'
 import img2 from '../assets/02.jpg'
 
@@ -46,26 +47,30 @@ const TrendForYouData = [
     totleAboutTweet: '14,224',
   },
 ]
+
+const TweetInput = styled(Input)({
+  // border: 'none',
+  // color: 'white',
+  width: '100%',
+  marginBottom: '0.5em',
+  // borderColor: 'transparent',
+  // ':before': {
+  //   borderBottom: 'none',
+  //   borderColor: 'transparent',
+  // },
+})
+
 export default function Rightbar() {
   return (
     <Box position={'sticky'} top='0' width='inherit'>
       <Box backgrouncolor='#f5f8fa' width='100%'>
-        <TextField
+        <TweetInput
+          placeholder="What's happening?"
+          type='search'
+          id='search'
           sx={{
             width: '100%',
             border: 'none',
-          }}
-          id='search'
-          type='text'
-          placeholder='Search Twitter'
-          fullWidth
-          width='100%'
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position='start'>
-                <Search />
-              </InputAdornment>
-            ),
           }}
         />
 
