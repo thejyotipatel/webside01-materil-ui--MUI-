@@ -1,40 +1,26 @@
 import {
-  Download,
-  Person,
-  Search,
-  BookmarkAddOutlined,
-  Explore,
+  BookmarkBorderOutlined,
+  EmailOutlined,
   Home,
-  Label,
   ListAltRounded,
-  MessageRounded,
   MoreHorizRounded,
   Notifications,
-  Twitter,
-  TagOutlined,
   Tag,
-  EmailOutlined,
-  BookmarkBorderOutlined,
+  Twitter,
 } from '@mui/icons-material'
 import {
+  Avatar,
+  Box,
+  Link,
   List,
   ListItem,
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  TextField,
-  Typography,
-  Button,
-  Grid,
-  Box,
-  InputAdornment,
-  Link,
-  Avatar,
   styled,
 } from '@mui/material'
 // import { Link, Navigate, Link } from 'react-router-dom'
 
-// import { InboxIcon, DraftsIcon } from '@mui/icons-material'
 const ListLink = styled(ListItem)({
   cursor: 'pointer',
   color: 'black',
@@ -57,7 +43,6 @@ const ListLink = styled(ListItem)({
     height: '50px',
   },
 })
-// import { InboxIcon, DraftsIcon } from '@mui/icons-material'
 const TweetButton = styled(ListItemButton)({
   borderRadius: '2em',
   color: 'white',
@@ -66,8 +51,6 @@ const TweetButton = styled(ListItemButton)({
   backgroundColor: '#1976d2',
   '&:hover, &:focus': {
     backgroundColor: 'rgba(25, 118, 210, 0.808)',
-    // color: 'black',
-    // opacity: '0.8',
   },
 })
 const Sidebars = () => {
@@ -76,7 +59,6 @@ const Sidebars = () => {
       <List
         sx={{
           padding: ' 0 1em 1em 1em',
-          // position: 'fixed',
         }}
       >
         <ListLink>

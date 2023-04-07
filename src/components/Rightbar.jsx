@@ -48,47 +48,32 @@ const TrendForYouData = [
   },
 ]
 
-const TweetInput = styled(Input)({
-  // border: 'none',
-  // color: 'white',
-  width: '100%',
-  marginBottom: '0.5em',
-  // borderColor: 'transparent',
-  // ':before': {
-  //   borderBottom: 'none',
-  //   borderColor: 'transparent',
-  // },
-})
-
 export default function Rightbar() {
   return (
     <Box position={'sticky'} top='0' width='inherit'>
       <Box backgrouncolor='#f5f8fa' width='100%'>
-        <TweetInput
+        <TextField
           placeholder='Search Twitter'
           type='search'
           id='search'
+          variant='outlined'
           sx={{
             width: '100%',
-            border: '2px solid #ddd',
-            borderRadius: '2em',
             padding: '1em',
+            // color: '#e6ecf0',
           }}
         />
-
         <Box bgcolor='#f5f8fa' p={1} my={2}>
           <Box
             borderBottom='2px solid #e6ecf0'
             display={'flex'}
             justifyContent='space-between'
             alignItems={'center'}
-            // width='100%'
             paddingY={1}
           >
             <Typography
               component='h1'
               variant='body2'
-              // padding={1}
               fontSize={'22px'}
               textAlign={'start'}
               fontWeight={600}

@@ -76,7 +76,6 @@ const postData = [
 
 const TweetInput = styled(Input)({
   border: 'none',
-  // color: 'white',
   width: '100%',
   marginBottom: '0.5em',
   borderColor: 'transparent',
@@ -88,19 +87,11 @@ const TweetInput = styled(Input)({
 export default function Feed() {
   return (
     <>
-      <Box
-        position={'sticky'}
-        // border={'2px solid red'}
-        top='0'
-        bgcolor={'white'}
-        // width='inherit'
-        zIndex='2'
-      >
+      <Box position={'sticky'} top='0' bgcolor={'white'} zIndex='2'>
         <Box
           display={'flex'}
           justifyContent='space-between'
           alignItems={'center'}
-          // width='100%'
           p={1}
           border='1px solid #e6ecf0'
         >
@@ -123,102 +114,92 @@ export default function Feed() {
             />
           </IconButton>
         </Box>
-        <Box
-          display={'flex'}
-          justifyContent='flex-start'
-          alignItems={'start'}
-          gap='0.5em'
-          p={1}
-          border='1px solid #e6ecf0'
-        >
-          <Avatar aria-label='recipe' src={img2}>
-            G
-          </Avatar>
-          <Box width={'100%'} sx={{ border: 0 }}>
-            <TweetInput
-              placeholder="What's happening?"
-              type='search'
-              id='search'
-            />
-            {/* <SearchInput
-            margin='none'
-            fullWidth
-            name='search'
-            // variant='standard'
-            padding='none'
-            sx={{ border: '0' }}
-          /> */}
-            <Stack direction={'row'} justifyContent='space-between'>
-              <Box>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'start',
-                    justifyContent: 'start',
-                    p: 0,
-                  }}
-                >
-                  <IconButton aria-label='chat' p='0'>
-                    <PhotoCameraBackOutlined
-                      sx={{
-                        width: '20px',
-                        height: '20px',
-                        color: '#1976d2',
-                      }}
-                    />
-                  </IconButton>
-                  <IconButton aria-label='retweet'>
-                    <GifBoxOutlined
-                      sx={{
-                        width: '20px',
-                        height: '20px',
-                        color: '#1976d2',
-                      }}
-                    />
-                  </IconButton>
-                  <IconButton aria-label='add to favorites'>
-                    <AlignHorizontalLeft
-                      sx={{
-                        width: '20px',
-                        height: '20px',
-                        color: '#1976d2',
-                      }}
-                    />
-                  </IconButton>
-                  <IconButton aria-label='upload'>
-                    <EmojiEmotionsOutlined
-                      sx={{
-                        width: '20px',
-                        height: '20px',
-                        color: '#1976d2',
-                      }}
-                    />
-                  </IconButton>
-                </Box>
-              </Box>
-              <Button
+      </Box>
+      <Box
+        display={'flex'}
+        justifyContent='flex-start'
+        alignItems={'start'}
+        gap='0.5em'
+        p={1}
+        border='1px solid #e6ecf0'
+      >
+        <Avatar aria-label='recipe' src={img2}>
+          G
+        </Avatar>
+        <Box width={'100%'} sx={{ border: 0 }}>
+          <TweetInput
+            placeholder="What's happening?"
+            type='search'
+            id='search'
+          />
+          <Stack direction={'row'} justifyContent='space-between'>
+            <Box>
+              <Box
                 sx={{
-                  borderRadius: '2em',
-                  color: 'white',
-                  textAlign: 'center',
-                  backgroundColor: '#07b4ff',
-                  textTransform: 'capitalize',
-                  p: '0.3em 1em',
-                  fontWeight: '600',
-                  '&:hover, &:focus': {
-                    backgroundColor: 'rgba(7, 181, 255, 0.863)',
-                    // color: 'black',
-                    // opacity: '0.8',
-                  },
+                  display: 'flex',
+                  alignItems: 'start',
+                  justifyContent: 'start',
+                  p: 0,
                 }}
               >
-                tweet
-              </Button>
-            </Stack>
-          </Box>
+                <IconButton aria-label='chat' p='0'>
+                  <PhotoCameraBackOutlined
+                    sx={{
+                      width: '20px',
+                      height: '20px',
+                      color: '#1976d2',
+                    }}
+                  />
+                </IconButton>
+                <IconButton aria-label='retweet'>
+                  <GifBoxOutlined
+                    sx={{
+                      width: '20px',
+                      height: '20px',
+                      color: '#1976d2',
+                    }}
+                  />
+                </IconButton>
+                <IconButton aria-label='add to favorites'>
+                  <AlignHorizontalLeft
+                    sx={{
+                      width: '20px',
+                      height: '20px',
+                      color: '#1976d2',
+                    }}
+                  />
+                </IconButton>
+                <IconButton aria-label='upload'>
+                  <EmojiEmotionsOutlined
+                    sx={{
+                      width: '20px',
+                      height: '20px',
+                      color: '#1976d2',
+                    }}
+                  />
+                </IconButton>
+              </Box>
+            </Box>
+            <Button
+              sx={{
+                borderRadius: '2em',
+                color: 'white',
+                textAlign: 'center',
+                backgroundColor: '#07b4ff',
+                textTransform: 'capitalize',
+                p: '0.3em 1em',
+                fontWeight: '600',
+                '&:hover, &:focus': {
+                  backgroundColor: 'rgba(7, 181, 255, 0.863)',
+                },
+              }}
+            >
+              tweet
+            </Button>
+          </Stack>
         </Box>
       </Box>
-      <Box borderTop='10px solid #e6ecf0'>
+      <Box borderTop='10px solid #e6ecf0' bgcolor={'inherit'}>
         {postData.map((post) => {
           return (
             <Box key={post.id} p={1} border='1px solid #e6ecf0'>

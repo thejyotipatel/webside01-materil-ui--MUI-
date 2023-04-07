@@ -26,6 +26,7 @@ const Post = ({
         alignItems: 'start',
         gap: '.5em',
         width: '100%',
+        backgroundColor: 'inherit',
       }}
     >
       <Avatar aria-label='recipe'>{userImage}</Avatar>
@@ -85,7 +86,6 @@ const Post = ({
             justifyContent='space-between'
             flexDirection={'row'}
             alignItems={'center'}
-            // width='100%'
           >
             <Typography
               variant='body2'
@@ -94,8 +94,6 @@ const Post = ({
               fontWeight={600}
               color='text'
               component={'p'}
-
-              // display={'grid'}
             >
               {text}
               {tags.map((item, i) => {
@@ -126,7 +124,6 @@ const Post = ({
             component='img'
             height='250px'
             width={'100%'}
-            // m={'0 1em 0 0'}
             src={image}
             alt='Paella dish'
             marginBottom={1}
@@ -136,9 +133,7 @@ const Post = ({
         <Box
           sx={{
             display: 'flex',
-            // flexDirection: 'column',
             alignItems: 'start',
-            // width: '50%',
             justifyContent: 'start',
             gap: '1em',
           }}
@@ -165,10 +160,7 @@ const Post = ({
             />
             <Typography
               variant='body2'
-              // paddingBottom={1}
-              // textAlign={'start'}
               color='text.secondary'
-              // fontWeight={500}
               fontSize={'15px'}
             >
               {chat}
@@ -196,10 +188,7 @@ const Post = ({
             />
             <Typography
               variant='body2'
-              // paddingBottom={1}
-              // textAlign={'start'}
               color='text.secondary'
-              // fontWeight={500}
               fontSize={'15px'}
             >
               {retweet}
