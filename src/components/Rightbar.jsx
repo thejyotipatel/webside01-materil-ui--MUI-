@@ -65,12 +65,14 @@ export default function Rightbar() {
     <Box position={'sticky'} top='0' width='inherit'>
       <Box backgrouncolor='#f5f8fa' width='100%'>
         <TweetInput
-          placeholder="What's happening?"
+          placeholder='Search Twitter'
           type='search'
           id='search'
           sx={{
             width: '100%',
-            border: 'none',
+            border: '2px solid #ddd',
+            borderRadius: '2em',
+            padding: '1em',
           }}
         />
 
